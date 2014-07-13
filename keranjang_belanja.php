@@ -34,6 +34,7 @@ $id_session = session_id();
 				</tr>
 			</thead>';
 			$no=1;
+			$total = 0;
 			while($data=mysql_fetch_array($query)) 
 			{
 				$subtotal=$data['jumlah_beli'] * $data['harga_menu'];

@@ -36,7 +36,11 @@ if ($_POST)
 	if (!$error)
 	{
 		//$sql ="SELECT * FROM member WHERE username='$user' AND password='$password'";
-		$sql = "SELECT member.*, kota.ongkos_kirim FROM member,kota WHERE member.id_kota = kota.id_kota AND username='$user' AND password='$password'";
+		$sql = "SELECT member.*, kota.ongkos_kirim 
+			FROM member, kota 
+			WHERE member.id_kota = kota.id_kota 
+				AND username='$user' 
+				AND password='$password'";
 		$query = mysql_query($sql);
 		//echo $sql;	
 		$find = mysql_num_rows($query);

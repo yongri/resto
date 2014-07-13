@@ -11,10 +11,10 @@ if ($module=='keranjang' AND $act=='tambah'){
 	$r=mysql_fetch_array($sql);
 	$stok_menu=$r['stok_menu'];
   
-  if ($stok_menu == 0){
+	if ($stok_menu == 0){
       echo "<script>window.alert('stok_menu Habis!')
 	  window.location=('index.php')</script>";
-  }
+	}
   else{
 	// check if the product is already
 	// in cart table for this session
