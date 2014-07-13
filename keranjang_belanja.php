@@ -16,9 +16,17 @@ $id_session = session_id();
 			<?php
 	$sql = "SELECT * FROM transaksi_temp a, menu b WHERE a.id_menu = b.id_menu AND id_session = '" . $id_session . "' GROUP BY a.id_menu ORDER By a.id_session DESC";
 	$query=mysql_query($sql);	
-	  $jml = mysql_num_rows($query);
-	  if($jml)
+	$jml = mysql_num_rows($query);
+	if($jml)
 	{
+		if (isset($_SESSION['error_stok']))
+		{
+			foreach($_SESSION['error_stok'] as $error_message)
+			{
+				echo '<p class="error">'.$error_message.'</p>';
+			}
+		}
+		
 		echo'<form method="post" action="aksi.php?module=keranjang&act=update">
 		<table class="table table-striped">
 			 <thead>
@@ -41,15 +49,15 @@ $id_session = session_id();
 						$total = $total + $subtotal;
 				echo'<tbody>';
 				echo '<tr>';
-				echo'<td width="40px">'.$no.'</td><input type="hidden" name="id[$no]" value="'.$data['id_session'].'">';
+				echo'<td width="40px">'.$no.'</td><input type="hidden" name="id[]" value="'.$data['id_menu'].'">';
 				echo'<td width="60px">'.$data['id_menu'].'</td>';
 				echo'<td width="90px"><img src="assets/menu/'.$data['gambar_menu'].'" width="50%" height="50%"></td>';
 				echo'<td width="100px">'.$data['nama_menu'].'</td>';
-				echo'<td width="40px"><input type=\"text\" name="jml[$no]" value="'.$data['jumlah_beli'].'" size=\"1\" onkeypress=\"return harusangka(event)\"></td>';
+				echo '<td width="40px"><input type="text" name="jml[]" value="'.$data['jumlah_beli'].'" size=\"1\" onkeypress=\"return harusangka(event)\"><input type="hidden" name="jmllama[]" value="'.$data['jumlah_beli'].'"><input type="hidden" name="nama_menu[]" value="'.$data['nama_menu'].'"></td>';
 				echo'<td width="70px">'.number_format($data['harga_menu'], 0, ',', '.').'</td>';
 				echo'<td width="70px">'.number_format($subtotal, 0, ',', '.').'</td>';
 				//echo'<td><a href="javascript:void(0);"><a href="aksi.php?module=keranjang&act=update&id='.$data['id_menu'].'" class="btn btn-mini btn-info">Update</a></td>';
-				echo "<td><input type=image src='assets/img/update.jpg' border=0></td>";
+				echo "<td><input type='image' src='assets/img/update.jpg' border=0></td>";
 				//echo'<td><input class="btn btn-mini btn-info" type="button" value="Update"></td>';
 				echo'<td><a class="btn btn-mini btn-info" href="aksi.php?module=keranjang&act=hapus&id='.$data['id_menu'].'">Hapus</a></td>';
 				echo'</tr>';
@@ -103,13 +111,14 @@ $id_session = session_id();
 			<td>'.$data2['telpon'].'</td>
 		</tr>
 			</table>';
+		unset($_SESSION['error_stok']);
 	}
 	else
 	{
 		echo'<p>Keranjang Belanja Anda kosong!</p>';
 	}
 	  ?>
-			</div>
+	</div>
 		
 </div><!-- Penutup Container -->
 <?php 
