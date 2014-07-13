@@ -1,0 +1,193 @@
+body {
+	
+    padding-top: 10px;
+    padding-bottom: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background-color:black;
+}
+
+#bg {
+	position:fixed;
+	top:-50%;
+	left:-50%;
+	min-width:200%;
+	min-height:200%;
+	z-index: -100;
+}
+#bg  img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 50%;
+	min-height: 50%;
+	z-index: -100;
+}
+/* Custom container */
+
+.container-narrow {
+	background-color:#f3f3f3;
+    margin: 0 auto;
+    max-width: 1000px;
+	min-height: 1700px;
+}
+.thumbnail > img {
+     height:100px ;
+    width: 200px;
+}
+.thumbnail {
+    width: 250px;
+	margin-bottom:10px;
+	margin-left:20px;
+	border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+    
+    line-height: 20px;
+    padding: 4px;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.row-fluid .span6 {
+    width: 64.5%;
+}
+.li .span6 .menu {
+    width: 40%;
+}
+
+.row-fluid .span4 {
+    margin-bottom: 2%;
+    width: 40%;
+}
+.row-fluid [class*="span"] {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin-left: 10%;
+    min-height: 30px;
+}
+.kiri {
+	background-color:white;
+	width:250px;
+	padding:5px;
+	
+}
+.kosong {
+	width:20px;
+	height:30px;
+}
+.left {
+	margin-left:1px;
+	width:250px;
+}
+.isi{
+	background-color:white;
+	width:717px;
+
+}
+.judul
+{
+font-family : Arial Black;
+}
+ /* Carousel base class */
+ .carousel {
+    margin-bottom: 50px;
+ }
+.carousel .container {
+    position: static;
+    z-index: 9;
+}
+.carousel-control {
+    height: 80px;
+    margin-top: 0;
+    font-size: 120px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    background-color: #808080;
+    border: 0;
+}
+.row-fluid .span8 {
+    width: 100%;
+}
+.carousel .item {
+    height: 200px;
+}
+.carousel img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   min-width: 100%;
+   height: 200px;
+}
+.carousel-caption {
+    background-color: transparent;
+    position: static;
+    max-width: 500px;
+    padding: 0 20px;
+    margin-top: 500px;
+}
+.carousel-caption h5,
+.carousel-caption .lead {
+    margin: 0;
+    line-height: 1.25;
+    color: #fff;
+	font-size:15px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+.carousel-control{
+	background-color: #808080;
+    border: 0 none;
+    margin-top: 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+	font-size: 50px;
+    height: 50px;
+}
+.carousel-control:hover{
+	color : #FFFFFF;
+	opacity :0.9;
+	text-decoration:none;
+}
+.well {
+    padding: 5px;
+}
+
+.row-fluid .thumbnails {
+    margin-left: 12px;
+	width: 10px;
+}
+.thumbnail-index {
+    width: 130px;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+.content {
+    padding-top: 10px;
+}
+.carousel-caption {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    left: 0;
+    padding: 10px 15px 5px;
+    position: absolute;
+    right: 0;
+}
+.kaki	{
+	background: none repeat scroll 0 0 black;
+	clear:right;
+	margin: 0 auto;
+	height: 50px;
+	font-size:12px;
+	line-height: 1em;
+	text-shadow: 1px 1px 1px #333;
+	color: #fff;
+	position : relative;
+	width: 900px;
+}
+.kaki p {
+	padding:20px;
+}
+
+
