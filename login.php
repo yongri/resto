@@ -15,9 +15,10 @@ include "sisi_kiri.php";
 if ($_POST)
 {
 	// validasi input
+	$error = false;
 	if (empty($_POST['user']))
 	{
-		$error['errUser']="Username harus diisi";	
+		$error['errUser'] = "Username harus diisi";	
 	}
 	else
 	{
@@ -57,7 +58,7 @@ if ($_POST)
 			$_SESSION['id_kota'] 		= $data['id_kota'];
 			$_SESSION['ongkos_kirim'] 	= $data['ongkos_kirim'];
 			
-					if(isset($_GET['redirect']))
+			if(isset($_GET['redirect']))
 			{
 				echo'<meta http-equiv="refresh" content="2; url=keranjang_belanja.php">';
 				
